@@ -6,7 +6,7 @@ export default function Search() {
         <div className='row'>
             <div className='col-lg-5'>
                 <div className='form-group'>
-                    <label>Type YOur City Name</label>
+                    <label>Type Your City Name</label>
                     <input className='form-control' type='text' name='city' id='city' aria-describedby='helpId' placeholder=''></input>
                 </div>
             </div>
