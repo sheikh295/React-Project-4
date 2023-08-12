@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Result() {
+export default function Result(props) {
+    console.log(props.weatherData);
   return (
     <>
         <div className='row'>
