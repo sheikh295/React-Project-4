@@ -37,7 +37,6 @@ class Weather extends Component {
             axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.lon}&appid=56fe2647587b1cef42d21de520f52d1f`)
             .then((result) => {
               this.setState({city: result.data.name, weatherData: result.data})
-              console.log(this.state.weatherData);
             })
             .catch((error) => {
               console.log(error)
@@ -58,7 +57,7 @@ class Weather extends Component {
     return (
       <div className='container pt-4' style={{height: '500px'}}>
         <Search lat={this.state.lat} lon={this.state.lon} city={this.state.city} change={this.changeHandler} getLocation={this.locationHandler} weatherData={this.state.weatherData} />
-        <Result />
+        <Result weatherData={this.state.weatherData} />
       </div>
     )
   }
