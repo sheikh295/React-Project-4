@@ -52,11 +52,21 @@ class Weather extends Component {
       console.log("Location not supported");
     }
   };
+
+  searchHandler = () => {
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.lon}&appid=56fe2647587b1cef42d21de520f52d1f`)
+      .then((result) => {
+        this.setState({city: result.data.name, weatherData: result.data})
+       })
+      .catch((error) => {
+        console.log(error)
+      })
+  };
   
   render() {
     return (
       <div className='container pt-4' style={{height: '500px'}}>
-        <Search lat={this.state.lat} lon={this.state.lon} city={this.state.city} change={this.changeHandler} getLocation={this.locationHandler} weatherData={this.state.weatherData} />
+        <Search lat={this.state.lat} lon={this.state.lon} city={this.state.city} change={this.changeHandler} getLocation={this.locationHandler} weatherData={this.state.weatherData} search={this.searchHandler} />
         <Result weatherData={this.state.weatherData} />
       </div>
     )

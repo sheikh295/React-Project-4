@@ -28,7 +28,7 @@ export default function Search(props) {
             </div>
             <div className='col-lg-1'>
                 <label htmlFor=''>Search</label>
-                <button className='btn btn-primary fa fa-search'></button>
+                <button onClick={props.search} className='btn btn-primary fa fa-search'></button>
             </div>
         </div>
     </>
