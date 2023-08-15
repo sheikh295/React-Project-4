@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <Errorpage />,
   },
   {
-    path: "/Weather",
+    path: "/weather",
     element:
             <div>
               <Header />
